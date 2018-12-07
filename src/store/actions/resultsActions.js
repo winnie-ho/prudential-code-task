@@ -1,7 +1,6 @@
 import axios from 'axios';
 
 export const fetchResults = (searchString) => {
-  console.log('IN ACTION')
   return (dispatch, getState) => {
     axios.get(`https://api.github.com/search/repositories?q=${ searchString }`)
     .then((response) => {
