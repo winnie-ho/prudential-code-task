@@ -1,9 +1,9 @@
 import React from 'react';
 
-const Result = () => {
+const Result = ({ result }) => {
   return (
     <div>
-      <h4>search result</h4>
+      <h4>{ result.id }</h4>
     </div>
   )
 }

@@ -1,12 +1,12 @@
 const initState = {
-  result: []
+  results: []
 }
 
 const resultsReducer = (state = initState, action) => {
   switch (action.type) {
     case 'FETCH_RESULTS':
       return Object.assign({}, state, {
-        state: action.state
+        results: action.results
       });
 
     case 'FETCH_RESULTS_ERROR':
