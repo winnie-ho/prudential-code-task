@@ -1,4 +1,5 @@
 import React, { Component } from 'react';
+import axios from 'axios';
 
 class SearchBar extends Component {
   state = {
@@ -7,12 +8,16 @@ class SearchBar extends Component {
 
 
   handleChange = (e) => {
-    console.log('SEARCH WORD', e.target.value)
     this.setState({ searchString: e.target.value })
   }
 
   handleSubmit = () => {
-    console.log('submit')
+    axios.get(`https://api.github.com/search/repositories?q=${ this.searchString }`)
+    .then((response) => {
+      console.log('RESPONSE', response.data)
+    }).catch((error) => {
+      console.log('Error in search request', error)
+    })
   }
 
 
