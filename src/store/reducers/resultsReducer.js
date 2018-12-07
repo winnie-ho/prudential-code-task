@@ -5,7 +5,12 @@ const initState = {
 const resultsReducer = (state = initState, action) => {
   switch (action.type) {
     case 'FETCH_RESULTS':
-      return state.results;
+      return Object.assign({}, state, {
+        state: action.state
+      });
+
+    case 'FETCH_RESULTS_ERROR':
+      return state;
     
     default:
       return state;

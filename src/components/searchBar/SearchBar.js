@@ -1,5 +1,6 @@
 import React, { Component } from 'react';
-import axios from 'axios';
+import { connect } from 'react-redux';
+import { fetchResults } from '../../store/actions/resultsActions';
 
 class SearchBar extends Component {
   state = {
@@ -12,12 +13,7 @@ class SearchBar extends Component {
   }
 
   handleSubmit = () => {
-    axios.get(`https://api.github.com/search/repositories?q=${ this.searchString }`)
-    .then((response) => {
-      console.log('RESPONSE', response.data)
-    }).catch((error) => {
-      console.log('Error in search request', error)
-    })
+    this.props.fetchResults(this.state.searchString);
   }
 
 
@@ -31,4 +27,10 @@ class SearchBar extends Component {
   }
 }
 
-export default SearchBar;
+const mapDispatchToProps = (dispatch) => {
+  return {
+    fetchResults: (searchString) => { dispatch(fetchResults(searchString)) }
+  }
+}
+
+export default connect(null, mapDispatchToProps)(SearchBar);
