@@ -1,10 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
 import { fetchResults } from '../../store/actions/resultsActions';
+import './SearchBar.css';
 
 class SearchBar extends Component {
   state = {
-    searchString: ''
+    searchString: 'cheese'
   }
 
 
@@ -19,9 +20,10 @@ class SearchBar extends Component {
 
   render() {
     return (
-      <div>
-        <input type='text' placeholder='search repos' onChange={ this.handleChange }></input>
-        <button onClick={ this.handleSubmit }>Search</button>
+      <div className='row search-container'>
+        <img alt='github logo' src='/assets/github-logo.png'/>
+        <input class='search-input' type='text' placeholder='github search' onChange={ this.handleChange }></input>
+        <button class='search-btn' onClick={ this.handleSubmit }>Go</button>
       </div>
     )
   }

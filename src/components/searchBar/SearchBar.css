@@ -1,0 +1,36 @@
+.search-container{
+  justify-content: center;
+  align-content: center;
+  align-items: center;
+  margin: 20px;
+}
+
+.search-input{
+  width: 70%;
+  height: 24px;
+  padding: 10px;
+  border: none;
+  border-bottom: 1px grey solid;
+  font-size: 20px;
+}
+
+img{
+  height: 100px;
+  width: auto;
+}
+
+.search-btn{
+  border-radius: 3px;
+  height: 46px;
+  width: 69px;
+  margin: 10px;
+  border: 1px solid gray;
+  font-size: 20px;
+  color: gray;
+}
+
+.search-btn:hover{
+  background-color: #23292D;
+  color: white;
+  transition: 0.5s;
+}
