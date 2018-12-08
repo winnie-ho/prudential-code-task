@@ -22,8 +22,8 @@ class SearchBar extends Component {
     return (
       <div className='row search-container'>
         <img alt='github logo' src='/assets/github-logo.png'/>
-        <input class='search-input' type='text' placeholder='github search' onChange={ this.handleChange }></input>
-        <button class='search-btn' onClick={ this.handleSubmit }>Go</button>
+        <input className='search-input' type='text' placeholder='github search' onChange={ this.handleChange }></input>
+        <button className='search-btn' onClick={ this.handleSubmit }>Go</button>
       </div>
     )
   }
