@@ -12,7 +12,6 @@ const ResultsList = ({ results }) => {
 
   return (
     <div className='result-list-container'>
-      ResultList
       { resultNodes } 
     </div>
   )
