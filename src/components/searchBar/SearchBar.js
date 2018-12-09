@@ -25,7 +25,7 @@ class SearchBar extends Component {
 
   render() {
     const clearBtn = this.state.searchString ? (
-      <img alt='cross' src='/assets/cross-icon.png' className='clear-btn' onClick={ this.handleClear }/> 
+      <img alt='cross' src='/assets/cross-icon.png' className='clear-btn btn' onClick={ this.handleClear }/> 
     ) : (
       null
     ) 
@@ -38,9 +38,10 @@ class SearchBar extends Component {
           type='text' 
           placeholder='github search' 
           onChange={ this.handleChange } 
-          value={ this.state.searchString }/>
+          value={ this.state.searchString }
+          tabIndex='1'/>
         { clearBtn } 
-        <button className='search-btn' onClick={ this.handleSubmit }>Go</button>
+        <button className='search-btn btn' onClick={ this.handleSubmit } tabIndex='2'>Go</button>
       </div>
     )
   }

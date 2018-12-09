@@ -32,12 +32,15 @@ img{
   font-size: 20px;
   color: gray;
 }
-
 .clear-btn{
   opacity: 0.4;
   width: auto;
   height: 15px;
   margin: 10px;
+}
+
+.btn {
+  cursor: pointer;
 }
 
 .search-btn:hover{
