@@ -1,11 +1,11 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
-import { fetchResults } from '../../store/actions/resultsActions';
+import { fetchResults, clearResults } from '../../store/actions/resultsActions';
 import './SearchBar.css';
 
 class SearchBar extends Component {
   state = {
-    searchString: 'cheese'
+    searchString: ''
   }
 
 
@@ -17,12 +17,24 @@ class SearchBar extends Component {
     this.props.fetchResults(this.state.searchString);
   }
 
+  handleClear = () => {
+    this.setState({ searchString: '' });
+    this.props.clearResults();
+  }
+
 
   render() {
+    const clearBtn = this.state.searchString ? (
+      <img alt='cross' src='/assets/cross-icon.png' className='clear-btn' onClick={ this.handleClear }/> 
+    ) : (
+      null
+    ) 
+
     return (
       <div className='row search-container'>
         <img alt='github logo' src='/assets/github-logo.png'/>
-        <input className='search-input' type='text' placeholder='github search' onChange={ this.handleChange }></input>
+        <input className='search-input' type='text' placeholder='github search' onChange={ this.handleChange } value={ this.state.searchString }></input>
+        { clearBtn } 
         <button className='search-btn' onClick={ this.handleSubmit }>Go</button>
       </div>
     )
@@ -31,7 +43,8 @@ class SearchBar extends Component {
 
 const mapDispatchToProps = (dispatch) => {
   return {
-    fetchResults: (searchString) => { dispatch(fetchResults(searchString)) }
+    fetchResults: (searchString) => { dispatch(fetchResults(searchString)) },
+    clearResults: () => { dispatch(clearResults()) }
   }
 }
 

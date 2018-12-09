@@ -30,6 +30,13 @@ img{
   color: gray;
 }
 
+.clear-btn{
+  opacity: 0.4;
+  width: auto;
+  height: 15px;
+  margin: 10px;
+}
+
 .search-btn:hover{
   background-color: #23292D;
   color: white;

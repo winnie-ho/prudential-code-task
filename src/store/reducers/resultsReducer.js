@@ -15,6 +15,9 @@ const resultsReducer = (state = initState, action) => {
 
     case 'FETCH_RESULTS_ERROR':
       return state;
+
+    case 'CLEAR_RESULTS':
+      return initState;
     
     default:
       return state;

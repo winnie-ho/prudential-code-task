@@ -12,3 +12,9 @@ export const fetchResults = (searchString) => {
     })
   }
 }
+
+export const clearResults = () => {
+  return (dispatch, getState) => {
+    dispatch({ type: 'CLEAR_RESULTS' })
+  }
+}
