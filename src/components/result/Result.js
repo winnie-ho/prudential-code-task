@@ -8,32 +8,37 @@ const Result = ({ result }) => {
       <ul>
         <li>
           <div>
-            { result.name }
+            <h4>{ result.name }</h4>
           </div>
           <div>
-            <p>{ result.language }</p>
+            <h4>Language</h4>
+            { result.language }
           </div>
           <div>
+            <h4>By</h4>
             { result.owner.login }
           </div>
           <div id='forks'>
             <img className='icon' src='/assets/fork-icon.png' alt='fork'/>
-            <p>{ result.forks_count }</p>
+            { result.forks_count }
           </div>
           <div>
             <img className='icon' src='/assets/star-icon.png' alt='star'/>
-            <p>{ result.stargazers_count }</p>
+            { result.stargazers_count }
           </div>
           <div>
             <img src={ result.owner.avatar_url } alt='avatar'/>
           </div>
           <div>
-            <p>Updated:</p>
-            <p>{ moment(new Date(result.updated_at)).fromNow() }</p>
+            <h4>Updated:</h4>
+            { moment(new Date(result.updated_at)).fromNow() }
           </div>
           <div className='detail'>
-            <p>{ result.name }</p>
-            <p>{ result.description }</p>
+              <img className='link-out icon' src='/assets/link-out-icon.png' alt='star'/>
+              <a href={ result.html_url } target='_blank' rel='noopener noreferrer'>
+                <h4>{ result.name }</h4>
+                { result.description }
+              </a>
           </div>
         </li>
       </ul>

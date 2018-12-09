@@ -15,6 +15,12 @@
   filter: invert(100%)
 }
 
+.link-out{
+  height: 10px;
+  position: absolute;
+  right: 10px;
+}
+
 ul{
   display: flex;
   position: relative;
@@ -32,12 +38,9 @@ ul li{
 .detail{
   width: 290px;
   height: 90px;
-  align-items: flex-start;
   padding: 5px;
-  white-space: nowrap; 
-  overflow: hidden;
-  word-wrap: break-word;
-  text-overflow: ellipsis;
+  display: block!important;
+  cursor: pointer;
 }
 
 ul li div{
@@ -49,14 +52,16 @@ ul li div{
   transition: 0.5s;
   display: flex !important;
   flex-direction: column;
+  word-break: break-word;
   justify-content: center;
   align-items: center;
   color: #fff;
   font-size: 10px !important;
   background: #23292D;
-  white-space: nowrap; 
-  overflow: hidden;
-  text-overflow: ellipsis;
+}
+
+ul li div:hover{
+  background: #ed923d;
 }
 
 a{
@@ -99,11 +104,3 @@ ul li:hover div:nth-child(8){
   transform: translate(0px, 100px);
   opacity: 0.8;
 }
-/* ul li:hover div:nth-child(9){
-  transform: translate(100px, 100px);
-  opacity: 0.8;
-}
-ul li:hover div:nth-child(10){
-  transform: translate(200px, 100px);
-  opacity: 0.8;
-} */
