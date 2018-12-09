@@ -1,12 +1,24 @@
 .result-container{
-  margin: 10px;
+  margin: 25px;
+  display: flex;
+  justify-content: center;
+  position: relative;
+}
+.result-container ul:hover{
+  height: 200px;
+}
+
+.icon{
+  width: auto;
+  height: 30px;
+  margin: 5px;
 }
 
 ul{
+  display: flex;
   position: relative;
   margin: 0;
   padding: 0;
-  display: flex;
 }
 
 ul li{
@@ -14,8 +26,6 @@ ul li{
   list-style: none;
   width: 100px;
   height: 100px;
-  margin: 0 30px;
-  /* transform: rotate(-30deg) skew(25deg); */
 }
 
 ul li div{
@@ -31,7 +41,9 @@ ul li div{
   color: #fff;
   font-size: 10px !important;
   background: #23292D;
-  /* border-radius: 50%; */
+  white-space: nowrap; 
+  overflow: hidden;
+  text-overflow: ellipsis;
 }
 
 a{
@@ -39,35 +51,43 @@ a{
   color: #fff;
 }
 
+ul li:hover div:nth-child(10){
+  transform: translate(200px, 100px);
+  opacity: 0.8;
+}
+ul li:hover div:nth-child(9){
+  transform: translate(-200px, 100px);
+  opacity: 0.8;
+}
 ul li:hover div:nth-child(8){
-  transform: translate(300px, -100px);
+  transform: translate(-100px, 100px);
   opacity: 0.8;
 }
 ul li:hover div:nth-child(7){
-  transform: translate(300px, 0px);
+  transform: translate(100px, 100px);
   opacity: 0.8;
 }
 ul li:hover div:nth-child(6){
-  transform: translate(200px, -100px);
+  transform: translate(0px, 100px);
   opacity: 0.2;
 }
-ul li:hover div:nth-child(5){
+ul li div:nth-child(5){
   transform: translate(200px, 0px);
   opacity: 1;
 }
-ul li:hover div:nth-child(4){
-  transform: translate(100px, -100px);
+ul li div:nth-child(4){
+  transform: translate(-200px, 0px);
   opacity: 0.8;
 }
-ul li:hover div:nth-child(3){
+ul li div:nth-child(3){
   transform: translate(100px, 0px);
   opacity: 0.6;
 }
-ul li:hover div:nth-child(2){
-  transform: translate(0px, -100px);
+ul li div:nth-child(2){
+  transform: translate(-100px, 0px);
   opacity: 0.4;
 }
-ul li:hover div:nth-child(1){
+ul li div:nth-child(1){
   transform: translate(0, 0);
   opacity: 0.2;
 }

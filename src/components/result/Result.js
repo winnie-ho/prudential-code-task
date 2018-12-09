@@ -8,27 +8,33 @@ const Result = ({ result }) => {
       <ul>
         <li>
           <div>
-            { moment(new Date(result.updated_at)).calendar() }
+            <p>{ result.language }</p>
+          </div>
+          <div>
+            { result.name }
+          </div>
+          <div id='forks'>
+            <img className='icon' src='/assets/fork-icon.png' alt='fork'/>
+            <p>{ result.forks_count }</p>
+          </div>
+          <div>
+            <img className='icon' src='/assets/star-icon.png' alt='star'/>
+            <p>{ result.stargazers_count }</p>
           </div>
           <div>
             { result.owner.login }
           </div>
           <div>
-            { result.name }
-          </div>
-          <div>
-            <p>Forks</p>
-            <p>{ result.forks_count }</p>
-          </div>
-          <div>
-            <p>Stargazers</p>
-            <p>{ result.stargazers_count }</p>
-          </div>
-          <div>
-            <p>{ result.language }</p>
+            { moment(new Date(result.updated_at)).calendar() }
           </div>
           <div>
             <img src={ result.owner.avatar_url } alt='avatar'/>
+          </div>
+          <div>
+            <a href={ result.html_url } target='_blank' rel='noopener noreferrer'>{ result.name }</a>
+          </div>
+          <div>
+            <a href={ result.html_url } target='_blank' rel='noopener noreferrer'>{ result.name }</a>
           </div>
           <div>
             <a href={ result.html_url } target='_blank' rel='noopener noreferrer'>{ result.name }</a>
