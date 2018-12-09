@@ -5,7 +5,7 @@ export const fetchResults = (searchString) => {
     axios.get(`https://api.github.com/search/repositories?q=${ searchString }`)
     .then((response) => {
       console.log('RESPONSE', response.data)
-      dispatch({ type: 'FETCH_RESULTS', results: response.data.items });
+      dispatch({ type: 'FETCH_RESULTS', results: response.data, searchString });
     }).catch((error) => {
       console.log('Error in search request', error)
       dispatch({ type: 'FETCH_RESULTS_ERROR', error });
