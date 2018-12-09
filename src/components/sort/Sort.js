@@ -10,21 +10,30 @@ class Sort extends Component {
 
 
   handleChange = (e) => {
-    console.log('SORT')
     this.setState({ sortBy: e.target.value });
     this.props.sortResults(this.state.sortBy);
   }
 
   render() {
-    return (
-      <div className='row sort-container'>
-        <select id='sortBy' onChange={ this.handleChange } defaultValue=''>
+    const sortBySelect = this.props.searchString ? (
+      <select id='sortBy' onChange={ this.handleChange } defaultValue=''>
           <option value='' disabled>sort by</option>
           <option value='forks_count'>Forks: High to Low</option>
           <option value='stargazers_count'>Stargazers: High to Low</option>
         </select>
+    ) : null
+    
+    return (
+      <div className='row sort-container'>
+        { sortBySelect }
       </div>
     )
+  }
+}
+
+const mapStateToProps = (state) => {
+  return {
+    searchString: state.results.searchString,
   }
 }
 
@@ -34,4 +43,4 @@ const mapDispatchToProps = (dispatch) => {
   }
 }
 
-export default connect(null, mapDispatchToProps)(Sort);
+export default connect(mapStateToProps, mapDispatchToProps)(Sort);
