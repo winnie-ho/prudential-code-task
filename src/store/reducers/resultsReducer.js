@@ -20,7 +20,6 @@ const resultsReducer = (state = initState, action) => {
       return initState;
 
     case 'SORT_RESULTS':
-      console.log('SORT REDUCER')
       return Object.assign({}, state, {
         results: state.results.slice().sort((a, b) => b[action.sortBy] - a[action.sortBy])
       })

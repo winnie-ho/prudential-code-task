@@ -4,7 +4,6 @@ import Result from '../result/Result';
 import { connect } from 'react-redux';
 
 const ResultsList = ({ results, resultsCount, searchString }) => {
-
   const resultNodes = results.map(result => {
     return (
       <Result key={ result.id } result={ result }/>

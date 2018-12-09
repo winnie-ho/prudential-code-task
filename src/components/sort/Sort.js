@@ -4,14 +4,9 @@ import { sortResults } from '../../store/actions/resultsActions';
 import './Sort.css';
 
 class Sort extends Component {
-  state = {
-    sortBy: ''
-  }
-
 
   handleChange = (e) => {
-    this.setState({ sortBy: e.target.value });
-    this.props.sortResults(this.state.sortBy);
+    this.props.sortResults(e.target.value);
   }
 
   render() {
@@ -33,7 +28,7 @@ class Sort extends Component {
 
 const mapStateToProps = (state) => {
   return {
-    searchString: state.results.searchString,
+    searchString: state.results.searchString
   }
 }
 
