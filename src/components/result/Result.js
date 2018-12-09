@@ -8,10 +8,13 @@ const Result = ({ result }) => {
       <ul>
         <li>
           <div>
+            { result.name }
+          </div>
+          <div>
             <p>{ result.language }</p>
           </div>
           <div>
-            { result.name }
+            { result.owner.login }
           </div>
           <div id='forks'>
             <img className='icon' src='/assets/fork-icon.png' alt='fork'/>
@@ -22,22 +25,15 @@ const Result = ({ result }) => {
             <p>{ result.stargazers_count }</p>
           </div>
           <div>
-            { result.owner.login }
-          </div>
-          <div>
-            { moment(new Date(result.updated_at)).calendar() }
-          </div>
-          <div>
             <img src={ result.owner.avatar_url } alt='avatar'/>
           </div>
           <div>
-            <a href={ result.html_url } target='_blank' rel='noopener noreferrer'>{ result.name }</a>
+            <p>Updated:</p>
+            <p>{ moment(new Date(result.updated_at)).fromNow() }</p>
           </div>
-          <div>
-            <a href={ result.html_url } target='_blank' rel='noopener noreferrer'>{ result.name }</a>
-          </div>
-          <div>
-            <a href={ result.html_url } target='_blank' rel='noopener noreferrer'>{ result.name }</a>
+          <div className='detail'>
+            <p>{ result.name }</p>
+            <p>{ result.description }</p>
           </div>
         </li>
       </ul>
