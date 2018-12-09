@@ -18,3 +18,10 @@ export const clearResults = () => {
     dispatch({ type: 'CLEAR_RESULTS' })
   }
 }
+
+export const sortResults = (sortBy) => {
+  console.log('SORT ACTION')
+  return (dispatch, getState) => {
+    dispatch({ type: 'SORT_RESULTS', sortBy })
+  }
+}

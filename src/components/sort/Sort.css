@@ -1,0 +1,10 @@
+.sort-container{
+  margin: 10px 100px;
+  display: flex;
+  justify-content: flex-end;
+}
+
+select{
+  height: 40px;
+  background-color:#fff;
+}

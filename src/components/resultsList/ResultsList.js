@@ -4,6 +4,7 @@ import Result from '../result/Result';
 import { connect } from 'react-redux';
 
 const ResultsList = ({ results, resultsCount, searchString }) => {
+
   const resultNodes = results.map(result => {
     return (
       <Result key={ result.id } result={ result }/>
@@ -21,7 +22,6 @@ const ResultsList = ({ results, resultsCount, searchString }) => {
 }
 
 const mapStateToProps = (state) => {
-  console.log('STATE', state)
   return {
     results: state.results.results,
     resultsCount: state.results.resultsCount,
