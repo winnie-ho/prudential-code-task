@@ -1,9 +1,25 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
-import App from './App';
+import resultsReducer from './store/reducers/resultsReducer';
 
-it('renders without crashing', () => {
-  const div = document.createElement('div');
-  ReactDOM.render(<App />, div);
-  ReactDOM.unmountComponentAtNode(div);
-});
+
+describe('Results reducer', () => {
+  it('should return the initial state on default', () => {
+    expect(resultsReducer(undefined, {})).toEqual({
+      results: [],
+      resultsCount: null,
+      searchString: ''
+    });
+  });
+
+  it('should return the initial state on clearResults', () => {
+    const clearResultsAction = {
+      type: 'CLEAR_RESULTS'
+    }
+
+    expect(resultsReducer({}, clearResultsAction)).toEqual({
+      results: [],
+      resultsCount: null,
+      searchString: ''
+    });
+  });
+  
+})
