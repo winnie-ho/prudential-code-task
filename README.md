@@ -6,9 +6,12 @@ In the project directory, you can run:
 
 - Implement a filter feature.
 - Implement reverse sortBy feature.
-- Add more tests.
 - Handle the large results beyond the returned first 30.
 - Implment pagination.
+- Add more tests.
+
+### `npm install`
+Installs the dependencies.
 
 ### `npm start`
 
